@@ -11,11 +11,11 @@ export class AlunosService {
 
   alunos: Aluno[] = []
 
-  private readonly url: string = 'http://localhost:4201/api/alunos/search-by-id/';
-  private readonly urlDelete: string = 'http://localhost:4201/api/alunos/remove/';
-  private readonly urlName: string = 'http://localhost:4201/api/alunos/search-by-name/';
-  private readonly urlSubmit: string = 'http://localhost:4201/api/aluno/new';
-  private readonly urlUpdate: string = 'http://localhost:4201/api/alunos/update';
+  private readonly url: string = '/api/alunos/search-by-id/';
+  private readonly urlDelete: string = '/api/alunos/remove/';
+  private readonly urlName: string = '/api/alunos/search-by-name/';
+  private readonly urlSubmit: string = '/api/aluno/new';
+  private readonly urlUpdate: string = '/api/alunos/update';
 
   constructor(private http: HttpClient) { }
 

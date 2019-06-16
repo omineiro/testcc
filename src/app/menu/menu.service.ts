@@ -10,10 +10,10 @@ import { Menu } from './menu.model';
     providedIn: 'root'
 })
 export class MenuService {
-    private urlMenu: string = 'http://localhost:4201/api/menu';
+    private urlMenu: string = '/api/menu';
 
     constructor(private http: HttpClient){}
-    
+
     getMenu(): Observable<Menu[]>{
         return this.http.get<any>(this.urlMenu);
     }

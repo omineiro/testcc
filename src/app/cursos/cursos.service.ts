@@ -12,12 +12,12 @@ export class CursosService {
 
   cursos: Curso[] = []
 
-  private readonly url: string = 'http://localhost:4201/api/courses/search-by-id/';
-  private readonly urlDelete: string = 'http://localhost:4201/api/courses/remove/';
-  private readonly urlName: string = 'http://localhost:4201/api/courses/search-by-name/';
-  private readonly urlSubmit: string = 'http://localhost:4201/api/course/new';
-  private readonly urlUpdate: string = 'http://localhost:4201/api/courses/update';
-  private readonly urlGetAll: string = 'http://localhost:4201/api/courses/all';
+  private readonly url: string = 'api/courses/search-by-id/';
+  private readonly urlDelete: string = '/api/courses/remove/';
+  private readonly urlName: string = '/api/courses/search-by-name/';
+  private readonly urlSubmit: string = '/api/course/new';
+  private readonly urlUpdate: string = '/api/courses/update';
+  private readonly urlGetAll: string = '/api/courses/all';
 
   constructor(private http: HttpClient) {}
 
@@ -45,5 +45,5 @@ export class CursosService {
   delete(id: number): Observable<Response>{
     return this.http.delete<any>(this.urlDelete + id);
   }
-  
+
 }
