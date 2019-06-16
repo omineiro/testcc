@@ -44,7 +44,7 @@ app.get('/*', function(req,res) {
 });
 
 // Start server
-app.listen(process.env.PORT || 4201, () => { console.log('Running in port 4201')});
+app.listen(process.env.PORT || 8080, () => { console.log('Running in port 4201')});
 
 
 app.get('/api/menu', function (request, response) {
@@ -57,7 +57,7 @@ app.get('/api/menu', function (request, response) {
 
 app.get('/api/courses/search-by-id/:id', function (request, response) {
     const _id = request.params.id;
-    
+
     let searchCourseByID = courses.find(courseWithID => {
         return courseWithID.id == _id;
     })
@@ -100,13 +100,13 @@ app.delete('/api/courses/remove/:id', function(request, response){
     })
     courses.splice(index, 1)
     response.json({state: 'success'})
-    
+
 })
 
 app.post('/api/course/new', function(request, response){
     const body = request.body
     body.id = 999;
-    
+
     courses.push(body)
     response.json({state: 'success'})
 })
@@ -117,7 +117,7 @@ app.post('/api/course/new', function(request, response){
 
 app.get('/api/alunos/search-by-id/:id', function (request, response) {
     const _id = request.params.id;
-    
+
     let searchAlunoByID = alunos.find(alunoWithID => {
         return alunoWithID.id == _id;
     })
@@ -157,7 +157,7 @@ app.delete('/api/alunos/remove/:id', function(request, response){
     })
     alunos.splice(index, 1)
     response.json({state: 'success'})
-    
+
 })
 
 app.post('/api/aluno/new', function(request, response){
