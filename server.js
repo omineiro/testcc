@@ -37,10 +37,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // arquivos estáticos
-app.use(express.static('./dist/apptcc'));
+app.use(express.static('${__dirname}/dist/apptcc'));
 
 app.get('/*', function(req,res) {
-    res.sendFile(path.join('./dist/apptcc/index.html'));
+    res.sendFile(path.join(`${__dirname}/dist/apptcc`));
 });
 
 // Start server
